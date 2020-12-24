@@ -6,14 +6,15 @@
 #ifndef CUCHILLO_H
 #define CUCHILLO_H
 
-#include <QGraphicsObject>
 #include <QObject>
 #include <QGraphicsRectItem>
 #include <QTimer>
 
-#define V 2 // Velocidad a la que se mueve
+#define V 2 // Velocidad de los proyectiles.
 
-class Cuchillo:public QObject, public QGraphicsRectItem
+class Cuchillo:
+        public QObject,
+        public QGraphicsRectItem
 {
 private:
     int posicionX; // Posicion en X despues de un determinado tiempo.
@@ -23,12 +24,16 @@ private:
     QTimer *timer;
 
 public:
+    /* El construcor sobrecargado debera recibir una posicion inicial en X y una posicion
+     inicial y constante en Y para que los proyectiles que se lancen se ubiquen correctamente
+     en la pantalla. */
     Cuchillo(int posicionInicialX, int posicionconstanteY);
 
     int getPosicionX() const;
     int getPosicionY() const;
 
 public slots:
+    /* Esta funcion se encargara de actualizar la posicion de los proyectiles para un tiempo t. */
     void actulizarposicion(void);
 
 };
