@@ -2,7 +2,6 @@
 
 Cuchillo::Cuchillo(int posicionInicialX, int posicionconstanteY)
 {
-    /* Se inicializan las variables. */
     timer = new QTimer();
     X0 = posicionInicialX;
     t=0;
@@ -10,14 +9,14 @@ Cuchillo::Cuchillo(int posicionInicialX, int posicionconstanteY)
     posicionY = posicionconstanteY;
     setRect(X0,posicionY,50,10);
 
-    /* Se hace una conexion entre el tiempo(timer) y el metodo "actualizarposicion" */
+    /* Se hace una conexion entre el timpo(timer) y el metodo "actualizarposicion" */
     connect(timer, &QTimer::timeout, this, &Cuchillo::actulizarposicion);
     timer->start(10);
 }
 
 void Cuchillo::actulizarposicion()
 {
-    /* Se calcula la nueva posicion en X para el proyectil y se ubica en la panatalla. */
+    /* Se calcula la nueva posicio en X para el proyectil y se ubica en la panatalla. */
     posicionX = X0 + V*t++;
     setPos(posicionX, posicionY);
 }

@@ -10,12 +10,10 @@ CONFIG += c++11
 
 SOURCES += \
     cuchillo.cpp \
-    main.cpp \
-    personaje.cpp
+    main.cpp
 
 HEADERS += \
-    cuchillo.h \
-    personaje.h
+    cuchillo.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
